@@ -1,0 +1,12 @@
+const GRPController = require('../controllers/GroupMember.controller')
+const verifyTokenParticipant = require('../middleware/verifyTokenParticipant');
+const router = require('express').Router();
+
+router.route('/').get( GRPController.getGrpMemebr)
+router.route('/post').post( GRPController.postGrpMember)
+router.route('/join/:id').put( GRPController.joiGroup)
+router.route('/:id').get( GRPController.getGrpMemebrById)
+
+
+module.exports = router
+
